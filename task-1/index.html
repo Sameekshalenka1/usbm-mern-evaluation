@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Navbar Example</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .content {
+            height: 2000px; /* Just to make the page scrollable */
+            padding: 20px;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            position: sticky;
+            top: 0; /* Stick the navbar to the top */
+            width: 100%;
+            z-index: 1000; /* Ensure the navbar stays on top of other content */
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Active link style */
+        .navbar a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navbar -->
+    <div class="navbar">
+        <a href="#" class="active">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <!-- Page Content -->
+    <div class="content">
+        <h1>Welcome to the Sticky Navbar Example!</h1>
+        <p>This page has a sticky navbar that stays at the top of the page while you scroll down.</p>
+        <p>Scroll to see the navbar stick to the top of the page.</p>
+        <p>Keep adding content to make the page longer...</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+
+const express = require('express');
+const app = express();
+const port = 4000;
+
+// Middleware to parse JSON body
+app.use(express.json());
+
+// In-memory array to store books
+let books = [];
+
+// POST route to add a book
+app.post('/books', (req, res) => {
+  const { title, author } = req.body;
+
+  // Check if both title and author are provided
+  if (!title || !author) {
+    return res.status(400).json({ message: 'Both title and author are required' });
+  }
+
+  // Create a new book object
+  const newBook = {
+    id: books.length + 1, // Simple ID generator (incremental)
+    title,
+    author
+  };
+
+  // Add the new book to the array
+  books.push(newBook);
+
+  // Send a success response
+  res.status(201).json({
+    message: 'Book added successfully',
+    book: newBook
+});
+});
+
+// Route to get all books (for testing purposes)
+app.get('/books', (req, res) => {
+res.json(books);
+});
+// Start the server
+app.listen(port, () => {
+  console.log(Server is running on http://localhost:${port});
+});
